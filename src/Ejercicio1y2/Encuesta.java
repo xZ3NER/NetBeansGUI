@@ -38,17 +38,28 @@ public class Encuesta extends javax.swing.JFrame {
         numHermanosLabel = new javax.swing.JLabel();
         sexoRadioButton1 = new javax.swing.JRadioButton();
         sexoRadioButton2 = new javax.swing.JRadioButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        deporteCheckBox = new javax.swing.JCheckBox();
+        deporteScrollPane = new javax.swing.JScrollPane();
+        deportesList = new javax.swing.JList<>();
+        deporteLabel = new javax.swing.JLabel();
+        aficcionLabel = new javax.swing.JLabel();
+        gradoCineLabel = new javax.swing.JLabel();
+        gradoComprasLabel = new javax.swing.JLabel();
+        gradoTvLabel = new javax.swing.JLabel();
+        cineSlider = new javax.swing.JSlider();
+        comprasSlider = new javax.swing.JSlider();
+        televisionSlider = new javax.swing.JSlider();
+        aceptarButton = new javax.swing.JButton();
+        cancelarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(575, 493));
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         separator.setBackground(new java.awt.Color(204, 204, 204));
         separator.setForeground(new java.awt.Color(204, 204, 204));
-        mainPanel.add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 580, 10));
+        mainPanel.add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 580, 10));
 
         edadLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         edadLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -88,6 +99,7 @@ public class Encuesta extends javax.swing.JFrame {
 
         sexoButtonGroup.add(sexoRadioButton1);
         sexoRadioButton1.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        sexoRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
         sexoRadioButton1.setText("MUJER");
         sexoRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,11 +110,96 @@ public class Encuesta extends javax.swing.JFrame {
 
         sexoButtonGroup.add(sexoRadioButton2);
         sexoRadioButton2.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        sexoRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
         sexoRadioButton2.setText("HOMBRE");
         mainPanel.add(sexoRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
-        jCheckBox1.setText("jCheckBox1");
-        mainPanel.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        deporteCheckBox.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        deporteCheckBox.setForeground(new java.awt.Color(0, 0, 0));
+        deporteCheckBox.setText("¿Practica algún deporte?");
+        deporteCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deporteCheckBoxActionPerformed(evt);
+            }
+        });
+        mainPanel.add(deporteCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        deportesList.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        deportesList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Fútbol", "Tenis", "Tenis de mesa", "Baloncesto", "Balonmano", "Volleyball" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        deporteScrollPane.setViewportView(deportesList);
+
+        mainPanel.add(deporteScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 170, 90));
+
+        deporteLabel.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        deporteLabel.setForeground(new java.awt.Color(0, 0, 0));
+        deporteLabel.setText("¿Cúal?");
+        mainPanel.add(deporteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 175, -1, -1));
+
+        aficcionLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        aficcionLabel.setForeground(new java.awt.Color(0, 0, 0));
+        aficcionLabel.setText("Marque de 1 a 10 su grado de aficción a: ");
+        mainPanel.add(aficcionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        gradoCineLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        gradoCineLabel.setForeground(new java.awt.Color(0, 0, 0));
+        gradoCineLabel.setText("Ir al cine: ");
+        mainPanel.add(gradoCineLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        gradoComprasLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        gradoComprasLabel.setForeground(new java.awt.Color(0, 0, 0));
+        gradoComprasLabel.setText("Compras: ");
+        mainPanel.add(gradoComprasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        gradoTvLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        gradoTvLabel.setForeground(new java.awt.Color(0, 0, 0));
+        gradoTvLabel.setText("Ver la televisión: ");
+        mainPanel.add(gradoTvLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+
+        cineSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        cineSlider.setForeground(new java.awt.Color(0, 0, 0));
+        cineSlider.setMajorTickSpacing(1);
+        cineSlider.setMaximum(10);
+        cineSlider.setMinorTickSpacing(1);
+        cineSlider.setPaintLabels(true);
+        cineSlider.setValue(5);
+        mainPanel.add(cineSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, -1));
+
+        comprasSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        comprasSlider.setForeground(new java.awt.Color(0, 0, 0));
+        comprasSlider.setMajorTickSpacing(1);
+        comprasSlider.setMaximum(10);
+        comprasSlider.setMinorTickSpacing(1);
+        comprasSlider.setPaintLabels(true);
+        comprasSlider.setValue(5);
+        mainPanel.add(comprasSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, -1));
+
+        televisionSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        televisionSlider.setForeground(new java.awt.Color(0, 0, 0));
+        televisionSlider.setMajorTickSpacing(1);
+        televisionSlider.setMaximum(10);
+        televisionSlider.setMinorTickSpacing(1);
+        televisionSlider.setPaintLabels(true);
+        televisionSlider.setValue(5);
+        mainPanel.add(televisionSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, -1, -1));
+
+        aceptarButton.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        aceptarButton.setForeground(new java.awt.Color(0, 0, 0));
+        aceptarButton.setText("ACEPTAR");
+        aceptarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarButtonActionPerformed(evt);
+            }
+        });
+        mainPanel.add(aceptarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 110, 40));
+
+        cancelarButton.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        cancelarButton.setForeground(new java.awt.Color(0, 0, 0));
+        cancelarButton.setText("CANCELAR");
+        mainPanel.add(cancelarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +209,7 @@ public class Encuesta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
         );
 
         pack();
@@ -125,6 +222,14 @@ public class Encuesta extends javax.swing.JFrame {
     private void sexoRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sexoRadioButton1ActionPerformed
+
+    private void deporteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deporteCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deporteCheckBoxActionPerformed
+
+    private void aceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aceptarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,9 +267,20 @@ public class Encuesta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aceptarButton;
+    private javax.swing.JLabel aficcionLabel;
+    private javax.swing.JButton cancelarButton;
+    private javax.swing.JSlider cineSlider;
+    private javax.swing.JSlider comprasSlider;
+    private javax.swing.JCheckBox deporteCheckBox;
+    private javax.swing.JLabel deporteLabel;
+    private javax.swing.JScrollPane deporteScrollPane;
+    private javax.swing.JList<String> deportesList;
     private javax.swing.JComboBox<String> edadComboBox;
     private javax.swing.JLabel edadLabel;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel gradoCineLabel;
+    private javax.swing.JLabel gradoComprasLabel;
+    private javax.swing.JLabel gradoTvLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel numHermanosLabel;
     private javax.swing.JSpinner numHermanosSpinner;
@@ -175,5 +291,6 @@ public class Encuesta extends javax.swing.JFrame {
     private javax.swing.JLabel sexoLabel;
     private javax.swing.JRadioButton sexoRadioButton1;
     private javax.swing.JRadioButton sexoRadioButton2;
+    private javax.swing.JSlider televisionSlider;
     // End of variables declaration//GEN-END:variables
 }
