@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedidos>
+	<pedido>
+		<destinatario>
+			<nombre>Juan</nombre>
+			<apellido_1>Delgado</apellido_1>
+			<apellido_2>Martínez</apellido_2>
+		</destinatario>
+		<articulo>Bicicleta A2023</articulo>
+		<entrega>
+			<direccion>
+				<calle>Barco 4</calle>
+				<piso>3</piso>
+				<letra>A</letra>
+			</direccion>
+			<fecha>19-5-2000</fecha>
+		</entrega>
+	</pedido>
+</pedidos>
