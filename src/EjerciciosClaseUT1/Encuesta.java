@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package EjerciciosClase;
+package EjerciciosClaseUT1;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author penga
  */
-public class Encuesta2 extends javax.swing.JFrame implements Runnable {
+public class Encuesta extends javax.swing.JFrame implements Runnable {
 
     Thread thread;
     boolean empezarPago = false;
@@ -23,7 +23,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
     /**
      * Creates new form Encuesta
      */
-    public Encuesta2() {
+    public Encuesta() {
         initComponents();
         this.setVisible(true);
     }
@@ -68,16 +68,16 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
-        mainPanel.setLayout(new java.awt.GridBagLayout());
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         separator.setBackground(new java.awt.Color(204, 204, 204));
         separator.setForeground(new java.awt.Color(204, 204, 204));
-        mainPanel.add(separator, new java.awt.GridBagConstraints());
+        mainPanel.add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 580, 10));
 
         edadLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         edadLabel.setForeground(new java.awt.Color(0, 0, 0));
         edadLabel.setText("Edad: ");
-        mainPanel.add(edadLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(edadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 50, -1));
 
         profesionTextField.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         profesionTextField.setEnabled(false);
@@ -86,32 +86,32 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 profesionTextFieldActionPerformed(evt);
             }
         });
-        mainPanel.add(profesionTextField, new java.awt.GridBagConstraints());
+        mainPanel.add(profesionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 130, -1));
 
         sexoLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         sexoLabel.setForeground(new java.awt.Color(0, 0, 0));
         sexoLabel.setText("Sexo: ");
-        mainPanel.add(sexoLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(sexoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         edadComboBox.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         edadComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entre 0 y 18 años", "Entre 18 y 30 años", "Entre 30 y 64 años" }));
         edadComboBox.setEnabled(false);
-        mainPanel.add(edadComboBox, new java.awt.GridBagConstraints());
+        mainPanel.add(edadComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 210, -1));
 
         profesionLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         profesionLabel.setForeground(new java.awt.Color(0, 0, 0));
         profesionLabel.setText("Profesión: ");
-        mainPanel.add(profesionLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(profesionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         numHermanosSpinner.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         numHermanosSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 20, 1));
         numHermanosSpinner.setEnabled(false);
-        mainPanel.add(numHermanosSpinner, new java.awt.GridBagConstraints());
+        mainPanel.add(numHermanosSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 70, -1));
 
         numHermanosLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         numHermanosLabel.setForeground(new java.awt.Color(0, 0, 0));
         numHermanosLabel.setText("Nº Hermanos: ");
-        mainPanel.add(numHermanosLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(numHermanosLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         sexoButtonGroup.add(sexoRadioButton1);
         sexoRadioButton1.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
@@ -123,14 +123,14 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 sexoRadioButton1ActionPerformed(evt);
             }
         });
-        mainPanel.add(sexoRadioButton1, new java.awt.GridBagConstraints());
+        mainPanel.add(sexoRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
 
         sexoButtonGroup.add(sexoRadioButton2);
         sexoRadioButton2.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         sexoRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
         sexoRadioButton2.setText("HOMBRE");
         sexoRadioButton2.setEnabled(false);
-        mainPanel.add(sexoRadioButton2, new java.awt.GridBagConstraints());
+        mainPanel.add(sexoRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         deporteCheckBox.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         deporteCheckBox.setForeground(new java.awt.Color(0, 0, 0));
@@ -141,7 +141,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 deporteCheckBoxActionPerformed(evt);
             }
         });
-        mainPanel.add(deporteCheckBox, new java.awt.GridBagConstraints());
+        mainPanel.add(deporteCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         deporteScrollPane.setEnabled(false);
 
@@ -154,31 +154,31 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         deportesList.setEnabled(false);
         deporteScrollPane.setViewportView(deportesList);
 
-        mainPanel.add(deporteScrollPane, new java.awt.GridBagConstraints());
+        mainPanel.add(deporteScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 170, 90));
 
         contadorLabel.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         contadorLabel.setForeground(new java.awt.Color(255, 0, 51));
-        mainPanel.add(contadorLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(contadorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 170, 40));
 
         aficcionLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         aficcionLabel.setForeground(new java.awt.Color(0, 0, 0));
         aficcionLabel.setText("Marque de 1 a 10 su grado de aficción a: ");
-        mainPanel.add(aficcionLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(aficcionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         gradoCineLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         gradoCineLabel.setForeground(new java.awt.Color(0, 0, 0));
         gradoCineLabel.setText("Ir al cine: ");
-        mainPanel.add(gradoCineLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(gradoCineLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
 
         gradoComprasLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         gradoComprasLabel.setForeground(new java.awt.Color(0, 0, 0));
         gradoComprasLabel.setText("Compras: ");
-        mainPanel.add(gradoComprasLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(gradoComprasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         gradoTvLabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         gradoTvLabel.setForeground(new java.awt.Color(0, 0, 0));
         gradoTvLabel.setText("Ver la televisión: ");
-        mainPanel.add(gradoTvLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(gradoTvLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         cineSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         cineSlider.setForeground(new java.awt.Color(0, 0, 0));
@@ -188,7 +188,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         cineSlider.setPaintLabels(true);
         cineSlider.setValue(5);
         cineSlider.setEnabled(false);
-        mainPanel.add(cineSlider, new java.awt.GridBagConstraints());
+        mainPanel.add(cineSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, -1, -1));
 
         comprasSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         comprasSlider.setForeground(new java.awt.Color(0, 0, 0));
@@ -198,7 +198,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         comprasSlider.setPaintLabels(true);
         comprasSlider.setValue(5);
         comprasSlider.setEnabled(false);
-        mainPanel.add(comprasSlider, new java.awt.GridBagConstraints());
+        mainPanel.add(comprasSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
 
         televisionSlider.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         televisionSlider.setForeground(new java.awt.Color(0, 0, 0));
@@ -208,7 +208,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         televisionSlider.setPaintLabels(true);
         televisionSlider.setValue(5);
         televisionSlider.setEnabled(false);
-        mainPanel.add(televisionSlider, new java.awt.GridBagConstraints());
+        mainPanel.add(televisionSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
 
         empezarButton.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         empezarButton.setForeground(new java.awt.Color(0, 0, 0));
@@ -224,7 +224,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 empezarButtonActionPerformed(evt);
             }
         });
-        mainPanel.add(empezarButton, new java.awt.GridBagConstraints());
+        mainPanel.add(empezarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 280, 40));
 
         cancelarButton.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         cancelarButton.setForeground(new java.awt.Color(0, 0, 0));
@@ -234,7 +234,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 cancelarButtonMouseClicked(evt);
             }
         });
-        mainPanel.add(cancelarButton, new java.awt.GridBagConstraints());
+        mainPanel.add(cancelarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, 110, 40));
 
         aceptarButton.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
         aceptarButton.setForeground(new java.awt.Color(0, 0, 0));
@@ -245,18 +245,18 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 aceptarButtonActionPerformed(evt);
             }
         });
-        mainPanel.add(aceptarButton, new java.awt.GridBagConstraints());
+        mainPanel.add(aceptarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 110, 40));
 
         deporteLabel.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         deporteLabel.setForeground(new java.awt.Color(0, 0, 0));
         deporteLabel.setText("¿Cúal?");
-        mainPanel.add(deporteLabel, new java.awt.GridBagConstraints());
+        mainPanel.add(deporteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 2139, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,8 +287,27 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_aceptarButtonActionPerformed
 
     private void empezarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empezarButtonMouseClicked
-        // TODO add your handling code here:
 
+        disableComponents();
+
+        if (empezarPago) {
+            CreditCardDialog creditCardDialog = new CreditCardDialog(this, true);
+
+            if (creditCardDialog.confirmClicked) {
+                thread = new Thread(this);
+                thread.start();
+            }
+            
+        } else {
+            thread = new Thread(this);
+            thread.start();
+        }
+
+    }//GEN-LAST:event_empezarButtonMouseClicked
+
+    public void disableComponents() {
+        // TODO add your handling code here:
+        
         aceptarButton.setEnabled(true);
         cineSlider.setEnabled(true);
         comprasSlider.setEnabled(true);
@@ -302,14 +321,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         sexoRadioButton1.setEnabled(true);
         sexoRadioButton2.setEnabled(true);
         televisionSlider.setEnabled(true);
-        
-        if (empezarPago) {
-            new CreditCardDialog(this ,true);
-        }
-
-        thread = new Thread(this);
-        thread.start();
-    }//GEN-LAST:event_empezarButtonMouseClicked
+    }
 
     private void cancelarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarButtonMouseClicked
         // TODO add your handling code here:
@@ -334,21 +346,20 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Encuesta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Encuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Encuesta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Encuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Encuesta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Encuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Encuesta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Encuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Encuesta2().setVisible(true);
+                new Encuesta().setVisible(true);
             }
         });
     }
@@ -397,7 +408,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
                 try {
                     thread.sleep(9);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(Encuesta2.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Encuesta.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -415,7 +426,7 @@ public class Encuesta2 extends javax.swing.JFrame implements Runnable {
         sexoRadioButton1.setEnabled(false);
         sexoRadioButton2.setEnabled(false);
         televisionSlider.setEnabled(false);
-        
+
         empezarButton.setText("5€ para otros 2seg");
         empezarPago = true;
     }
