@@ -8,8 +8,10 @@ import java.util.EventListener;
 
 /**
  *
- * @author penga
+ * @author peng
  */
+
+//Nuestro listener personalizado
 public interface FinCuentaAtrasListener extends EventListener {
     public void capturarFinCuentaAtras (FinCuentaAtrasEvent ev);
 }

@@ -8,8 +8,10 @@ import java.util.EventObject;
 
 /**
  *
- * @author penga
+ * @author peng
  */
+
+//Un objeto de evento que utilizará nuestro Listener
 public class FinCuentaAtrasEvent extends EventObject{
     
     public FinCuentaAtrasEvent(Object source) {
