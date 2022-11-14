@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package JavaBean;
+package JavaBeanComponent;
 
 import java.io.File;
 import javax.swing.JFileChooser;
 
 /**
- *
+ *  Clase utilizado como editor de propiedades (al darle a los 3 puntitos para editar, mostrará este panel)
+ *  Tendremos que controlar sus eventos, y hacer un Getter de la clase que contiene las propiedades
+ *  a modificar (en este caso, BackgroundImage) -> Ver más abajo.
  * @author xZ3NER
  */
 public class ImagePropertiesPanel extends javax.swing.JPanel {
@@ -98,6 +100,9 @@ public class ImagePropertiesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_imagePathTextFActionPerformed
 
+    /*
+    *   Para cargar una imagen del sistema y mostrar su ruta absoluta, en un text field.
+    */
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         JFileChooser jFileChooser = new JFileChooser();
@@ -110,6 +115,10 @@ public class ImagePropertiesPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 
+    /*
+    *   Método Getter de una nueva instacia de nuestra clase que contiene las propiedades a modificar
+    *   Obtendremos los datos introducidos por el usuario, y devolveremos el objeto con los datos cargados.
+    */
     public BackgroundImage getBackgroundImage() {
             File imageFile = new File(imagePathTextF.getText());
             Float opacity = opacitySlider.getValue()/100f;

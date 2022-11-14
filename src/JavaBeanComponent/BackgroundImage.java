@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package JavaBean;
+package JavaBeanComponent;
 
 import java.io.File;
 import java.io.Serializable;
 
 /**
- *
+ *  Clase utilizada para almacenar las propiedades que cambiaremos de nuestro componente JPanelImage
+ *  (También tendrá que implementar Serializable)
  * @author xZ3NER
  */
 public class BackgroundImage implements Serializable {
@@ -16,6 +13,9 @@ public class BackgroundImage implements Serializable {
     private File imagePath;
     private Float opacity;
 
+    /*
+    *   Priopiedades a modificar en forma de atributos, con sus Getter y Setter.
+    */
     public BackgroundImage(File imagePath, Float opacity) {
         this.imagePath = imagePath;
         this.opacity = opacity;

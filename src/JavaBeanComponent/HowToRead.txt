@@ -1,0 +1,5 @@
+JPanelImage -> BackgroundImage (optional) -> ImagePropertiesPanel -> BgImagePropertyEditorSupport -> 
+
+LASTLY: 
+
+*BeanInfo: In design -> properties -> search for your custom property, in this case 'bgImage' and added the BgImagePropertyEditorSupport to it.

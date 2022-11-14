@@ -32,7 +32,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        temporizadorBean2.setTiempo(60);
         temporizadorBean2.addFinCuentaAtrasListener(new BeansPractica.FinCuentaAtrasListener() {
             public void capturarFinCuentaAtras(BeansPractica.FinCuentaAtrasEvent evt) {
                 temporizadorBean2CapturarFinCuentaAtras(evt);
@@ -44,16 +43,16 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
-                .addComponent(temporizadorBean2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
+                .addContainerGap(280, Short.MAX_VALUE)
+                .addComponent(temporizadorBean2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(248, 248, 248))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(184, 184, 184)
                 .addComponent(temporizadorBean2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         pack();
@@ -61,7 +60,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void temporizadorBean2CapturarFinCuentaAtras(BeansPractica.FinCuentaAtrasEvent evt) {//GEN-FIRST:event_temporizadorBean2CapturarFinCuentaAtras
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "La cuenta atrás ha terminado","Aviso",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Evento finalizado","Aviso",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_temporizadorBean2CapturarFinCuentaAtras
 
     /**

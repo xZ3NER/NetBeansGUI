@@ -24,27 +24,24 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="144" max="32767" attributes="0"/>
-              <Component id="temporizadorBean2" min="-2" pref="114" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+              <EmptySpace pref="280" max="32767" attributes="0"/>
+              <Component id="temporizadorBean2" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="187" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
               <Component id="temporizadorBean2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace pref="235" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="BeansPractica.TemporizadorBean" name="temporizadorBean2">
-      <Properties>
-        <Property name="tiempo" type="int" value="60"/>
-      </Properties>
       <Events>
         <EventHandler event="capturarFinCuentaAtras" listener="BeansPractica.FinCuentaAtrasListener" parameters="BeansPractica.FinCuentaAtrasEvent" handler="temporizadorBean2CapturarFinCuentaAtras"/>
       </Events>
