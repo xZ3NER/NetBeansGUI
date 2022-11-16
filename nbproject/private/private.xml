@@ -6,12 +6,10 @@
             <file>file:/H:/Development/NetBeansGUI/TesteandoGUIs/src/EjerciciosClaseUT1/CreditCardDialog.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/BackgroundImage.java</file>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/JPanelImageBeanInfo.java</file>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/JPanelImage.java</file>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/BgImagePropertyEditorSupport.java</file>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/MainFrame.java</file>
-            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBean/ImagePropertiesPanel.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBeanComponent/ImagePropertiesPanel.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBeanComponent/MainFrame.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBeanComponent/HowToRead.txt</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/JavaBeanComponent/BgImagePropertyEditorSupport.java</file>
         </group>
     </open-files>
 </project-private>
