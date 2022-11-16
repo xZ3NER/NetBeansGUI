@@ -23,11 +23,7 @@ public class Clock implements Serializable {
     private String currentTime;
 
     public Clock(boolean longFormat) {
-        if (longFormat) {
-            dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        } else {
-            dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss");
-        }
+        setLongFormat(longFormat);   
     }
 
     public String getCurrentTime() {

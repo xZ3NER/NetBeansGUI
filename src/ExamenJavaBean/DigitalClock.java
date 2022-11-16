@@ -22,12 +22,17 @@ import javax.swing.Timer;
  */
 public class DigitalClock extends JLabel implements Serializable,ActionListener{
     
+    //TODO More properties in our property editor pane, and a custom event handler.
+    
     private Clock clock;
     private Timer timer;
 
     public DigitalClock() {
 
         initCustomFont();
+        
+         this.clock = new Clock(true);
+         refreshClock();
         
         this.timer = new Timer(1000, this);
         timer.start();
@@ -39,7 +44,7 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
             InputStream inputStream= this.getClass().getResourceAsStream("ds-digi.ttf");
             
             Font digitalFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
-            this.setFont(digitalFont);
+            this.setFont(digitalFont.deriveFont(20f));
             
         } catch (FontFormatException | IOException ex) {
             Logger.getLogger(DigitalClock.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,11 +53,6 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
         repaint();
     }
     
-    private void refreshClock() {
-        this.setText(clock.getCurrentTime());
-        repaint();
-    }
-
     public Clock getClock() {
         return clock;
     }
@@ -68,5 +68,10 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
         }
     }
     
-    
+    private void refreshClock() {
+        this.setText(clock.getCurrentTime());
+        repaint();
+    }
+
+
 }
