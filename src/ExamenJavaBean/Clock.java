@@ -5,7 +5,7 @@
 package ExamenJavaBean;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -15,42 +15,82 @@ import java.time.format.DateTimeFormatter;
 public class Clock implements Serializable {
 
     private DateTimeFormatter dateTimeFormatter;
-    private LocalDateTime localDateTime;
+    private LocalTime localTime;
+    private LocalTime alertTime;
 
-    private boolean longFormat;
-    private boolean customWarning;
+    private boolean shortFormat;
+    private boolean customAlert;
+    private String alertText;
 
-    private String currentTime;
+    private int hours;
+    private int min;
 
-    public Clock(boolean longFormat) {
-        setLongFormat(longFormat);   
+    public Clock(boolean shortFormat, boolean customAlert, int hours, int minutes, String alertText) {
+        this.shortFormat = shortFormat;
+        this.alertText = alertText;
+        this.customAlert = customAlert;
+        this.hours = hours;
+        this.min = minutes;
+
+        setShortFormat();
     }
 
     public String getCurrentTime() {
-        localDateTime = LocalDateTime.now();
-        currentTime = dateTimeFormatter.format(localDateTime);
+        localTime = LocalTime.now();
 
-        return currentTime;
+        return dateTimeFormatter.format(localTime);
     }
 
-    public boolean isLongFormat() {
-        return longFormat;
+    public boolean isShortFormat() {
+        return shortFormat;
     }
 
-    public void setLongFormat(boolean longFormat) {
-        if (longFormat) {
-            dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        } else {
+    public void setShortFormat() {
+
+        if (this.shortFormat) {
             dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+        } else {
+            dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         }
-        this.longFormat = longFormat;
     }
 
-    public boolean isCustomWarning() {
-        return customWarning;
+    public boolean isCustomAlert() {
+        return customAlert;
     }
 
-    public void setCustomWarning(boolean customWarning) {
-        this.customWarning = customWarning;
+    public void setCustomAlert(boolean customAlert) {
+        this.customAlert = customAlert;
     }
+
+    public String getAlertTime() {
+        alertTime = LocalTime.of(hours, min, 0);
+
+        return dateTimeFormatter.format(alertTime);
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public String getAlertText() {
+        return alertText;
+    }
+
+    public void setAlertText(String alertText) {
+        this.alertText = alertText;
+    }
+
+    
 }

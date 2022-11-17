@@ -5,6 +5,10 @@
         <group name="NetBeansGUI"/>
         <group>
             <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/MainFrame.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/Clock.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/DigitalClockProperties.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/ClockEventListener.java</file>
+            <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/ClockEvent.java</file>
             <file>file:/C:/Users/penga/Documents/Development/NetBeansGUI/NetBeansGUI_DAM/src/ExamenJavaBean/DigitalClock.java</file>
         </group>
     </open-files>

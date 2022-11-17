@@ -28,7 +28,7 @@ public class DigitalClockPropertyEditorSupport extends PropertyEditorSupport {
     @Override
     public String getJavaInitializationString() {
         Clock clock = propertyEditor.getClock();
-        return "new ExamenJavaBean.Clock("+clock.isLongFormat()+")";
+        return "new ExamenJavaBean.Clock("+clock.isShortFormat()+","+clock.isCustomAlert()+","+clock.getHours()+","+clock.getMin()+",\""+clock.getAlertText()+"\")";
     }
 
     @Override

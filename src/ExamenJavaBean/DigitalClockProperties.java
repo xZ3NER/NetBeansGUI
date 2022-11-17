@@ -15,6 +15,12 @@ public class DigitalClockProperties extends javax.swing.JPanel {
      */
     public DigitalClockProperties() {
         initComponents();
+        hoursSpinner.setVisible(false);
+        hourLabel.setVisible(false);
+        minSpinner.setVisible(false);
+        minLabel.setVisible(false);
+        alertTextLabel.setVisible(false);
+        alertTextField.setVisible(false);
     }
 
     /**
@@ -26,44 +32,135 @@ public class DigitalClockProperties extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        longFormatCheckB = new javax.swing.JCheckBox();
+        shortFormatCheckB = new javax.swing.JCheckBox();
+        hoursSpinner = new javax.swing.JSpinner();
+        customAlarmCheckB = new javax.swing.JCheckBox();
+        minSpinner = new javax.swing.JSpinner();
+        hourLabel = new javax.swing.JLabel();
+        minLabel = new javax.swing.JLabel();
+        alertTextField = new javax.swing.JTextField();
+        alertTextLabel = new javax.swing.JLabel();
 
-        longFormatCheckB.setText("24h clock format");
-        longFormatCheckB.addActionListener(new java.awt.event.ActionListener() {
+        shortFormatCheckB.setText("12h clock format");
+        shortFormatCheckB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                longFormatCheckBActionPerformed(evt);
+                shortFormatCheckBActionPerformed(evt);
             }
         });
+
+        hoursSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 23, 1));
+
+        customAlarmCheckB.setText("Custom alert");
+        customAlarmCheckB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customAlarmCheckBActionPerformed(evt);
+            }
+        });
+
+        minSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
+
+        hourLabel.setText("h");
+
+        minLabel.setText("min");
+
+        alertTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alertTextFieldActionPerformed(evt);
+            }
+        });
+
+        alertTextLabel.setText("Texto a mostrar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(longFormatCheckB)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(alertTextLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(alertTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(shortFormatCheckB)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(customAlarmCheckB)
+                        .addGap(18, 18, 18)
+                        .addComponent(hoursSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hourLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(minSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(minLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(longFormatCheckB)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(shortFormatCheckB)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hoursSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customAlarmCheckB)
+                    .addComponent(minSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourLabel)
+                    .addComponent(minLabel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alertTextLabel)
+                    .addComponent(alertTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void longFormatCheckBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_longFormatCheckBActionPerformed
+    private void shortFormatCheckBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shortFormatCheckBActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_longFormatCheckBActionPerformed
+
+    }//GEN-LAST:event_shortFormatCheckBActionPerformed
+
+    private void customAlarmCheckBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customAlarmCheckBActionPerformed
+        // TODO add your handling code here:
+        if (customAlarmCheckB.isSelected()) {
+            hoursSpinner.setVisible(true);
+            hourLabel.setVisible(true);
+            minSpinner.setVisible(true);
+            minLabel.setVisible(true);
+            alertTextLabel.setVisible(true);
+            alertTextField.setVisible(true);
+        } else {
+            hoursSpinner.setVisible(false);
+            hourLabel.setVisible(false);
+            minSpinner.setVisible(false);
+            minLabel.setVisible(false);
+            alertTextLabel.setVisible(false);
+            alertTextField.setVisible(false);
+        }
+    }//GEN-LAST:event_customAlarmCheckBActionPerformed
+
+    private void alertTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alertTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alertTextFieldActionPerformed
 
     public Clock getClock() {
-        boolean longFormat = longFormatCheckB.isSelected();
-        return new Clock(longFormat);
+        boolean shortFormat = shortFormatCheckB.isSelected();
+        boolean customAlert = customAlarmCheckB.isSelected();
+        Integer alertHour =(Integer) hoursSpinner.getValue();
+        Integer alertMin =(Integer) minSpinner.getValue();
+        String alertText = alertTextField.getText();
+        
+        return new Clock(shortFormat,customAlert,alertHour,alertMin,alertText);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox longFormatCheckB;
+    private javax.swing.JTextField alertTextField;
+    private javax.swing.JLabel alertTextLabel;
+    private javax.swing.JCheckBox customAlarmCheckB;
+    private javax.swing.JLabel hourLabel;
+    private javax.swing.JSpinner hoursSpinner;
+    private javax.swing.JLabel minLabel;
+    private javax.swing.JSpinner minSpinner;
+    private javax.swing.JCheckBox shortFormatCheckB;
     // End of variables declaration//GEN-END:variables
 }

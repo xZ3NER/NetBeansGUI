@@ -27,11 +27,13 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
     private Clock clock;
     private Timer timer;
 
+private ClockEventListener clockEventListener;
+    
     public DigitalClock() {
 
         initCustomFont();
         
-         this.clock = new Clock(true);
+         this.clock = new Clock(false,false,0,0,"");
          refreshClock();
         
         this.timer = new Timer(1000, this);
@@ -60,11 +62,26 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
     public void setClock(Clock clock) {
         this.clock = clock;
     }
+    
+    public void addClockEventListener(ClockEventListener clockEventListener) {
+        this.clockEventListener = clockEventListener;
+    }
+
+    public void removeClockEventListener(ClockEventListener clockEventListener) {
+        this.clockEventListener = null;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (clock!=null) {
             refreshClock();
+        }
+        
+        if (clock.isCustomAlert()) {
+            if (clock.getCurrentTime().equals(clock.getAlertTime())) {
+                clockEventListener.alarmEvent(new ClockEvent(this));
+                timer.stop();
+            }
         }
     }
     
@@ -72,6 +89,4 @@ public class DigitalClock extends JLabel implements Serializable,ActionListener{
         this.setText(clock.getCurrentTime());
         repaint();
     }
-
-
 }
