@@ -17,12 +17,6 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-        digitalClock1.addClockEventListener(new ClockEventListener() {
-            @Override
-            public void alarmEvent(ClockEvent evt) {
-               JOptionPane.showMessageDialog(null, digitalClock1.getClock().getAlertText(),"Alerta",JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
     }
     
 
@@ -38,25 +32,38 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        digitalClock2.setClock(new ExamenJavaBean.Clock(true,true,10,42,"ALARMAAAAA"));
+        digitalClock2.setFont(new java.awt.Font("DS-Digital", 0, 48)); // NOI18N
+        digitalClock2.addClockEventListener(new ExamenJavaBean.ClockEventListener() {
+            public void alarmEvent(ExamenJavaBean.ClockEvent evt) {
+                digitalClock2AlarmEvent(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(digitalClock2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(digitalClock2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(digitalClock2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(digitalClock2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void digitalClock2AlarmEvent(ExamenJavaBean.ClockEvent evt) {//GEN-FIRST:event_digitalClock2AlarmEvent
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, digitalClock2.getClock().getAlertText());
+    }//GEN-LAST:event_digitalClock2AlarmEvent
 
     /**
      * @param args the command line arguments

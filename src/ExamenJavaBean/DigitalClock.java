@@ -80,7 +80,6 @@ private ClockEventListener clockEventListener;
         if (clock.isCustomAlert()) {
             if (clock.getCurrentTime().equals(clock.getAlertTime())) {
                 clockEventListener.alarmEvent(new ClockEvent(this));
-                timer.stop();
             }
         }
     }

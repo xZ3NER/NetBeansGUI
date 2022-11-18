@@ -266,26 +266,28 @@ public class DigitalClockBeanInfo extends SimpleBeanInfo {
 
     // EventSet identifiers//GEN-FIRST:Events
     private static final int EVENT_ancestorListener = 0;
-    private static final int EVENT_componentListener = 1;
-    private static final int EVENT_containerListener = 2;
-    private static final int EVENT_focusListener = 3;
-    private static final int EVENT_hierarchyBoundsListener = 4;
-    private static final int EVENT_hierarchyListener = 5;
-    private static final int EVENT_inputMethodListener = 6;
-    private static final int EVENT_keyListener = 7;
-    private static final int EVENT_mouseListener = 8;
-    private static final int EVENT_mouseMotionListener = 9;
-    private static final int EVENT_mouseWheelListener = 10;
-    private static final int EVENT_propertyChangeListener = 11;
-    private static final int EVENT_vetoableChangeListener = 12;
+    private static final int EVENT_clockEventListener = 1;
+    private static final int EVENT_componentListener = 2;
+    private static final int EVENT_containerListener = 3;
+    private static final int EVENT_focusListener = 4;
+    private static final int EVENT_hierarchyBoundsListener = 5;
+    private static final int EVENT_hierarchyListener = 6;
+    private static final int EVENT_inputMethodListener = 7;
+    private static final int EVENT_keyListener = 8;
+    private static final int EVENT_mouseListener = 9;
+    private static final int EVENT_mouseMotionListener = 10;
+    private static final int EVENT_mouseWheelListener = 11;
+    private static final int EVENT_propertyChangeListener = 12;
+    private static final int EVENT_vetoableChangeListener = 13;
 
     // EventSet array
     /*lazy EventSetDescriptor*/
     private static EventSetDescriptor[] getEdescriptor(){
-        EventSetDescriptor[] eventSets = new EventSetDescriptor[13];
+        EventSetDescriptor[] eventSets = new EventSetDescriptor[14];
     
         try {
             eventSets[EVENT_ancestorListener] = new EventSetDescriptor ( ExamenJavaBean.DigitalClock.class, "ancestorListener", javax.swing.event.AncestorListener.class, new String[] {"ancestorAdded", "ancestorRemoved", "ancestorMoved"}, "addAncestorListener", "removeAncestorListener" ); // NOI18N
+            eventSets[EVENT_clockEventListener] = new EventSetDescriptor ( ExamenJavaBean.DigitalClock.class, "clockEventListener", ExamenJavaBean.ClockEventListener.class, new String[] {"alarmEvent"}, "addClockEventListener", "removeClockEventListener" ); // NOI18N
             eventSets[EVENT_componentListener] = new EventSetDescriptor ( ExamenJavaBean.DigitalClock.class, "componentListener", java.awt.event.ComponentListener.class, new String[] {"componentResized", "componentMoved", "componentShown", "componentHidden"}, "addComponentListener", "removeComponentListener" ); // NOI18N
             eventSets[EVENT_containerListener] = new EventSetDescriptor ( ExamenJavaBean.DigitalClock.class, "containerListener", java.awt.event.ContainerListener.class, new String[] {"componentAdded", "componentRemoved"}, "addContainerListener", "removeContainerListener" ); // NOI18N
             eventSets[EVENT_focusListener] = new EventSetDescriptor ( ExamenJavaBean.DigitalClock.class, "focusListener", java.awt.event.FocusListener.class, new String[] {"focusGained", "focusLost"}, "addFocusListener", "removeFocusListener" ); // NOI18N
