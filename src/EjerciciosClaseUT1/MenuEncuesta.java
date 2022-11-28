@@ -5,9 +5,12 @@
 package EjerciciosClaseUT1;
 
 import java.awt.Desktop;
+import java.awt.Font;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
  *
@@ -35,11 +38,11 @@ public class MenuEncuesta extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         encuestaButton = new javax.swing.JButton();
         menu = new javax.swing.JMenuBar();
-        menuArchivo = new javax.swing.JMenu();
         menuEncuesta = new javax.swing.JMenu();
         menuItemEncuesta = new javax.swing.JMenuItem();
-        menuAyuda = new javax.swing.JMenu();
-        menuItemAyuda = new javax.swing.JMenuItem();
+        menuAccesibilidad = new javax.swing.JMenu();
+        cambiarTemas = new javax.swing.JMenuItem();
+        cambiarTamano = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -71,11 +74,9 @@ public class MenuEncuesta extends javax.swing.JFrame {
 
         getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 280));
 
-        menuArchivo.setText("Archivo");
-        menu.add(menuArchivo);
-
         menuEncuesta.setText("Encuesta");
 
+        menuItemEncuesta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemEncuesta.setText("Hacer Encuesta");
         menuItemEncuesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,22 +87,32 @@ public class MenuEncuesta extends javax.swing.JFrame {
 
         menu.add(menuEncuesta);
 
-        menuAyuda.setText("Ayuda");
-        menuAyuda.addActionListener(new java.awt.event.ActionListener() {
+        menuAccesibilidad.setText("Accesibilidad");
+        menuAccesibilidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAyudaActionPerformed(evt);
+                menuAccesibilidadActionPerformed(evt);
             }
         });
 
-        menuItemAyuda.setText("AyudaGeneral");
-        menuItemAyuda.addActionListener(new java.awt.event.ActionListener() {
+        cambiarTemas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        cambiarTemas.setText("Cambiar Temas");
+        cambiarTemas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemAyudaActionPerformed(evt);
+                cambiarTemasActionPerformed(evt);
             }
         });
-        menuAyuda.add(menuItemAyuda);
+        menuAccesibilidad.add(cambiarTemas);
 
-        menu.add(menuAyuda);
+        cambiarTamano.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        cambiarTamano.setText("Cambiar Tamaño");
+        cambiarTamano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarTamanoActionPerformed(evt);
+            }
+        });
+        menuAccesibilidad.add(cambiarTamano);
+
+        menu.add(menuAccesibilidad);
 
         setJMenuBar(menu);
 
@@ -110,36 +121,38 @@ public class MenuEncuesta extends javax.swing.JFrame {
 
     private void menuItemEncuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEncuestaActionPerformed
         // TODO add your handling code here:
-        new Encuesta();
+        Encuesta encuesta = new Encuesta();
+        encuesta.updateUI();
         this.dispose();
     }//GEN-LAST:event_menuItemEncuestaActionPerformed
 
     private void encuestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encuestaButtonActionPerformed
         // TODO add your handling code here:
 
-        new Encuesta();
+        Encuesta encuesta = new Encuesta();
+        encuesta.updateUI();
         this.dispose();
     }//GEN-LAST:event_encuestaButtonActionPerformed
 
-    private void menuAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAyudaActionPerformed
+    private void menuAccesibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAccesibilidadActionPerformed
         // TODO add your handling code here:
 
          
-    }//GEN-LAST:event_menuAyudaActionPerformed
+    }//GEN-LAST:event_menuAccesibilidadActionPerformed
 
-    private void menuItemAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAyudaActionPerformed
+    private void cambiarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarTemasActionPerformed
         // TODO add your handling code here:
-        String url = "https://www.policia.es/_es/index.php";
+        new CambiarTema(this, false,this);
+        this.dispose();
+    }//GEN-LAST:event_cambiarTemasActionPerformed
 
-        try {
-            Desktop desktop = java.awt.Desktop.getDesktop();
-            URI oURL = new URI(url);
-            desktop.browse(oURL);
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_menuItemAyudaActionPerformed
+    private void cambiarTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarTamanoActionPerformed
+        // TODO add your handling code here:
+         new CambiarTamaño(this, false,this);
+         this.dispose();
+    }//GEN-LAST:event_cambiarTamanoActionPerformed
 
+   
     /**
      * @param args the command line arguments
      */
@@ -174,15 +187,25 @@ public class MenuEncuesta extends javax.swing.JFrame {
             }
         });
     }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem cambiarTamano;
+    private javax.swing.JMenuItem cambiarTemas;
     private javax.swing.JButton encuestaButton;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menu;
-    private javax.swing.JMenu menuArchivo;
-    private javax.swing.JMenu menuAyuda;
+    private javax.swing.JMenu menuAccesibilidad;
     private javax.swing.JMenu menuEncuesta;
-    private javax.swing.JMenuItem menuItemAyuda;
     private javax.swing.JMenuItem menuItemEncuesta;
     // End of variables declaration//GEN-END:variables
+
+   public void changeFontSize(int fontSize) {
+        UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Segoe UI", Font.PLAIN, fontSize));
+        updateUI();
+    }
+    
+    public void updateUI() {
+       SwingUtilities.updateComponentTreeUI(this);
+    }
 }

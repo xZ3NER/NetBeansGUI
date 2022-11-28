@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -260,7 +261,7 @@ public class Encuesta extends javax.swing.JFrame implements Runnable {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
         );
 
         pack();
@@ -429,5 +430,9 @@ public class Encuesta extends javax.swing.JFrame implements Runnable {
 
         empezarButton.setText("5€ para otros 2seg");
         empezarPago = true;
+    }
+    
+    public void updateUI() {
+       SwingUtilities.updateComponentTreeUI(this);
     }
 }
