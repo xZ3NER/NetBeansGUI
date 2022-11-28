@@ -15,15 +15,12 @@ import javax.swing.UIManager;
  */
 public class CambiarTamaño extends javax.swing.JDialog {
     
-    private MenuEncuesta menuEncuesta;
-
     /**
      * Creates new form CambiarTamaño
      */
-    public CambiarTamaño(java.awt.Frame parent, boolean modal,MenuEncuesta menuEncuesta) {
+    public CambiarTamaño(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.menuEncuesta = menuEncuesta;
         this.setVisible(true);
     }
 
@@ -77,13 +74,16 @@ public class CambiarTamaño extends javax.swing.JDialog {
     private void confirmBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBActionPerformed
         // TODO add your handling code here:
         int fontSize = (int) this.fontSizeSpin.getValue();
-        
-        menuEncuesta.changeFontSize(fontSize);
-
-        new MenuEncuesta();
+        changeFontSize(fontSize);
+      
         this.dispose();
     }//GEN-LAST:event_confirmBActionPerformed
 
+    public void changeFontSize(int fontSize) {
+        UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Segoe UI", Font.PLAIN, fontSize));
+        SwingUtilities.updateComponentTreeUI(this);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -114,7 +114,7 @@ public class CambiarTamaño extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CambiarTamaño dialog = new CambiarTamaño(new javax.swing.JFrame(), true,null);
+                CambiarTamaño dialog = new CambiarTamaño(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

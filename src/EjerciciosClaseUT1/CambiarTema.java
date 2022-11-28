@@ -15,16 +15,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author penga
  */
 public class CambiarTema extends javax.swing.JDialog {
-
-    private MenuEncuesta menuEncuesta;
     
     /**
      * Creates new form cambiarTema
      */
-    public CambiarTema(java.awt.Frame parent, boolean modal,MenuEncuesta menuEncuesta) {
+    public CambiarTema(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.menuEncuesta = menuEncuesta;
         initComboB();
         setVisible(true);
     }
@@ -82,8 +79,7 @@ public class CambiarTema extends javax.swing.JDialog {
             UIManager.LookAndFeelInfo lookAndFeel = UIManager.getInstalledLookAndFeels()[this.themeComboB.getSelectedIndex()];
             UIManager.setLookAndFeel(lookAndFeel.getClassName());
             SwingUtilities.updateComponentTreeUI(this);
-            this.menuEncuesta.updateUI();
-           
+          
             this.dispose();
 
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
@@ -122,7 +118,7 @@ public class CambiarTema extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CambiarTema dialog = new CambiarTema(new javax.swing.JFrame(), true,null);
+                CambiarTema dialog = new CambiarTema(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

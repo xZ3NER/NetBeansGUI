@@ -51,7 +51,7 @@ public class MenuEncuesta extends javax.swing.JFrame {
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         encuestaButton.setBackground(new java.awt.Color(255, 255, 255));
-        encuestaButton.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
+        encuestaButton.setFont(encuestaButton.getFont().deriveFont(encuestaButton.getFont().getSize()+24f));
         encuestaButton.setForeground(new java.awt.Color(255, 0, 51));
         encuestaButton.setText("HACER ENCUESTA AQUÍ");
         encuestaButton.setBorder(null);
@@ -88,11 +88,6 @@ public class MenuEncuesta extends javax.swing.JFrame {
         menu.add(menuEncuesta);
 
         menuAccesibilidad.setText("Accesibilidad");
-        menuAccesibilidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAccesibilidadActionPerformed(evt);
-            }
-        });
 
         cambiarTemas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         cambiarTemas.setText("Cambiar Temas");
@@ -134,25 +129,18 @@ public class MenuEncuesta extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_encuestaButtonActionPerformed
 
-    private void menuAccesibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAccesibilidadActionPerformed
-        // TODO add your handling code here:
-
-         
-    }//GEN-LAST:event_menuAccesibilidadActionPerformed
-
     private void cambiarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarTemasActionPerformed
         // TODO add your handling code here:
-        new CambiarTema(this, false,this);
-        this.dispose();
+        new CambiarTema(this, true);
+        SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_cambiarTemasActionPerformed
 
     private void cambiarTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarTamanoActionPerformed
         // TODO add your handling code here:
-         new CambiarTamaño(this, false,this);
-         this.dispose();
+        new CambiarTamaño(this, true);
+         SwingUtilities.updateComponentTreeUI(this);
     }//GEN-LAST:event_cambiarTamanoActionPerformed
 
-   
     /**
      * @param args the command line arguments
      */
@@ -187,7 +175,7 @@ public class MenuEncuesta extends javax.swing.JFrame {
             }
         });
     }
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cambiarTamano;
@@ -200,12 +188,5 @@ public class MenuEncuesta extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemEncuesta;
     // End of variables declaration//GEN-END:variables
 
-   public void changeFontSize(int fontSize) {
-        UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Segoe UI", Font.PLAIN, fontSize));
-        updateUI();
-    }
-    
-    public void updateUI() {
-       SwingUtilities.updateComponentTreeUI(this);
-    }
+
 }
