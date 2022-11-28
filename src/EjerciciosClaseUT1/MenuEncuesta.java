@@ -4,19 +4,15 @@
  */
 package EjerciciosClaseUT1;
 
-import java.awt.Desktop;
-import java.awt.Font;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 /**
  *
  * @author penga
  */
 public class MenuEncuesta extends javax.swing.JFrame {
+    
+    private int fontSize;
 
     /**
      * Creates new form MenuEncuesta
@@ -117,15 +113,19 @@ public class MenuEncuesta extends javax.swing.JFrame {
     private void menuItemEncuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEncuestaActionPerformed
         // TODO add your handling code here:
         Encuesta encuesta = new Encuesta();
-        encuesta.updateUI();
+        if (fontSize>-1) {
+            encuesta.changeFontSize(fontSize);
+        }
         this.dispose();
     }//GEN-LAST:event_menuItemEncuestaActionPerformed
 
     private void encuestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encuestaButtonActionPerformed
         // TODO add your handling code here:
-
         Encuesta encuesta = new Encuesta();
-        encuesta.updateUI();
+        if (fontSize>-1) {
+            encuesta.changeFontSize(fontSize);
+        }
+        
         this.dispose();
     }//GEN-LAST:event_encuestaButtonActionPerformed
 
@@ -137,10 +137,14 @@ public class MenuEncuesta extends javax.swing.JFrame {
 
     private void cambiarTamanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarTamanoActionPerformed
         // TODO add your handling code here:
-        new CambiarTamaño(this, true);
-         SwingUtilities.updateComponentTreeUI(this);
+        new CambiarTamaño(this, true,this);
     }//GEN-LAST:event_cambiarTamanoActionPerformed
 
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    
     /**
      * @param args the command line arguments
      */

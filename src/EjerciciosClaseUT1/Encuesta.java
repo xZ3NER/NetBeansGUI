@@ -4,12 +4,15 @@
  */
 package EjerciciosClaseUT1;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 /**
@@ -432,7 +435,24 @@ public class Encuesta extends javax.swing.JFrame implements Runnable {
         empezarPago = true;
     }
     
-    public void updateUI() {
+    public void changeFontSize(int fontSize) {
+         List<Component> components= getAllComponents(this);
+        for(Component comp: components){
+            if (comp instanceof JLabel || comp instanceof JTextField) {
+                 comp.setFont(new Font(comp.getFont().getFontName(),0,fontSize));
+            }
+        }
        SwingUtilities.updateComponentTreeUI(this);
     }
+    
+    public List<Component> getAllComponents(final Container c) {
+    Component[] comps = c.getComponents();
+    List<Component> compList = new ArrayList<>();
+    for (Component comp : comps) {
+        compList.add(comp);
+        if (comp instanceof Container)
+            compList.addAll(getAllComponents((Container) comp));
+    }
+    return compList;
+}
 }
